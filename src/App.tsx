@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css'
+
 import './App.css';
+import SubApp1 from './components/SubApp1';
+import SubApp2 from './components/SubApp2';
+
+function TabApps() {
+  return (
+    <Tabs className="tab-height90">
+      <TabList>
+        <Tab>SubApp1</Tab>
+        <Tab>SubApp2</Tab>
+      </TabList>
+
+      <TabPanel>
+        <SubApp1></SubApp1>
+      </TabPanel>
+      <TabPanel>
+        <SubApp2></SubApp2>
+      </TabPanel>
+    </Tabs>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TabApps></TabApps>
     </div>
   );
 }
